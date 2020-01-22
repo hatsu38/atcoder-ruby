@@ -10,22 +10,34 @@
 # problem d
 # input
 # 5 3
-# 3 1 4
-# 1 5 9
-# 2 6 5
-# 3 5 8
-# 9 7 9
+# 1 -2 3
+# -4 5 -6
+# 7 -8 -9
+# -10 11 -12
+# 13 -14 15
 # output
-# 56
-# 解けてない！
+# 54
+
 cake_kind_cnt,cake_select_cnt = gets.chomp.split(" ").map(&:to_i)
 strs = []
 cake_kind_cnt.times do
   strs << gets.chomp.split(" ").map(&:to_i)
 end
 
-sums = []
-strs.each do |str|
-  sums << str.inject(:+)
+if cake_select_cnt < 1
+  puts 0
+  exit
 end
-print sums.max(cake_select_cnt).inject(:+)
+
+sums = []
+calculated_strs = []
+[1,-1].repeated_permutation(3) do |n|
+  calculated_strs = strs.collect do |x, y, z|
+    x * n[0] + y * n[1] + z * n[2]
+  end
+  calculated_strs.sort!
+  calculated_strs.reverse!
+  sums << calculated_strs[0..(cake_select_cnt-1)].inject(:+)
+end
+
+puts sums.max
