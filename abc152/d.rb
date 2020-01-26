@@ -4,8 +4,8 @@
 # ...
 # a_N b_N
 
-# N = gets.to_i
-# a, b = N.times.map{gets.split.map(&:to_i)}.transpose
+# h,w = gets.chomp.split(' ').map(&:to_i)
+# strs = h.times.map{ gets.chomp.split('') }
 
 # problem D
 # input
