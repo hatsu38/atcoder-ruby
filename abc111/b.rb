@@ -1,0 +1,19 @@
+### 例
+# N
+# a_1 b_1
+# ...
+# a_N b_N
+
+# h,w = gets.chomp.split(' ').map(&:to_i)
+# strs = h.times.map{ gets.chomp.split('') }
+
+# input
+# 750
+# output
+# 777
+n = gets.to_i
+[*n..999].each do |num|
+  next if num.to_s.split('').uniq.size != 1
+  puts num
+  break
+end
