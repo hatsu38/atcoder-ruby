@@ -15,8 +15,20 @@
 n = gets.to_i
 strs = gets.chomp.split(' ').map(&:to_i)
 
-dp = [0, (strs[0]-strs[1]).abs]
+# dp = [0, (strs[0]-strs[1]).abs]
+# [*2..(n-1)].each do |i|
+#   dp << [dp[i-2] + (strs[i-2]-strs[i]).abs, dp[i-1] + (strs[i-1]-strs[i]).abs].min
+# end
+# puts dp[-1]
+
+dp = Array.new(n, 0)
+dp[0] = 0
+dp[1] = (strs[1] - strs[0]).abs
+
 [*2..(n-1)].each do |i|
-  dp << [dp[i-2] + (strs[i-2]-strs[i]).abs, dp[i-1] + (strs[i-1]-strs[i]).abs].min
+  pre_1 = dp[i-1] + (strs[i]-strs[i-1]).abs
+  pre_2 = dp[i-2] + (strs[i]-strs[i-2]).abs
+  dp[i] = [pre_1, pre_2].min
 end
-puts dp[-1]
+
+puts dp[n-1]
