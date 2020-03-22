@@ -21,22 +21,21 @@
 # 5
 
 n = gets.to_i
-ary = gets.chomp.split(' ').map(&:to_i)
+as = gets.split.map(&:to_i)
+MAX = 2 * 10**5
 
-cnt_hash = ary.each_with_object(Hash.new(0)){|v,o| o[v]+=1}
-minas_cnt_hash = {}
-
-ary.uniq.each do |i|
-  cnt_hash.reject{|k, _| k == i}.values.each do |val|
-    minas_cnt_hash[i] = (val*(val-1))/2
-  end
+cs = Array.new(MAX + 1, 0)
+# それぞれの数が配列に何個あるか数える
+as.each do |a|
+  cs[a] += 1
 end
 
-puts cnt_hash
 
-ary.each do |i|
-  num = cnt_hash[i]-1
-  num = 1 if num == 0
-  minas_cnt_hash[i] = 0 if minas_cnt_hash.empty?
-  puts minas_cnt_hash[i] + (num * (num-1))/2
+sum = cs.inject(0) do |r, v|
+  r + v * (v - 1) / 2
+end
+
+as.each do |a|
+  diff = (cs[a] - 1) # c * (c - 1) / 2 - (c - 1) * (c - 2) / 2
+  puts sum - diff
 end
