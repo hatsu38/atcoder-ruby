@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -7,21 +9,21 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# 正整数 
+# 正整数
 # A,B が与えられます。
 
 # あなたは、
 # A=B になるまで以下の操作を繰り返します。
 
-# A,B の大小関係に応じて、次の 
+# A,B の大小関係に応じて、次の
 # 2 個のうちどちらかの処理を行う。
 # A>B ならば、
-# A を 
+# A を
 # A−B で置き換える。
 # A<B ならば、
-# B を 
+# B を
 # B−A で置き換える。
-# A=B になるまで、操作を何回行うか求めてください。ただし、有限回の操作で 
+# A=B になるまで、操作を何回行うか求めてください。ただし、有限回の操作で
 # A=B になることが保証されます。
 
 # input
@@ -29,7 +31,7 @@
 # output
 # 4
 
-h, w = gets.chomp.split(' ').map(&:to_i).minmax
+h, w = gets.chomp.split.map(&:to_i).minmax
 
 cnt = 0
 

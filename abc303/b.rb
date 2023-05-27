@@ -54,7 +54,7 @@
 # 上記の判定をするプログラムを作成してください。
 
 N, M = gets.split.map(&:to_i)
-grid = M.times.map { gets.chomp.split(' ').map(&:to_i) }
+grid = Array.new(M) { gets.chomp.split.map(&:to_i) }
 
 hash = Hash.new(0)
 
@@ -68,4 +68,4 @@ grid.each_with_index do |g, _i|
   end
 end
 
-puts hash.values.reject { |a| a }.size
+puts(hash.values.count(&:!))

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -21,8 +23,7 @@ k = gets.to_i
 # 0でないk個あるようなものの個数
 ans = 0
 [*1..n].each do |num|
-  ans += 1 if num.to_s.split('').map(&:to_i).count { |i| i != 0 } == k
+  ans += 1 if num.to_s.chars.map(&:to_i).count { |i| i != 0 } == k
 end
 puts ans
 # puts n.to_s.size
-

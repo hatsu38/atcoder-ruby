@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -22,7 +24,7 @@
 # Yes
 
 h = gets.to_i
-strs = h.times.map{ gets.chomp.split('') }
+strs = Array.new(h) { gets.chomp.chars }
 
 if strs.uniq.size != h
   puts 'No'
@@ -30,8 +32,9 @@ if strs.uniq.size != h
 end
 
 strs.each_with_index do |str, idx|
-  break if idx == h-1
-  if str[-1] != strs[idx+1][0]
+  break if idx == h - 1
+
+  if str[-1] != strs[idx + 1][0]
     puts 'No'
     exit
   end

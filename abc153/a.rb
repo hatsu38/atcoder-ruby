@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,9 +13,9 @@
 # 10 4
 # output
 # 3
-h, a = gets.chomp.split(' ').map(&:to_i)
+h, a = gets.chomp.split.map(&:to_i)
 ans = 0
-while h>0
+while h.positive?
   ans += 1
   h -= a
 end

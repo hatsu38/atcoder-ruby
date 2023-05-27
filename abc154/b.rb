@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,7 +13,7 @@
 # gone
 # output
 # xxxx
-s= gets.chomp.split('')
+s = gets.chomp.chars
 s.length.times do
   print 'x'
 end

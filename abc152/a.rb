@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,7 +14,7 @@
 # 3 3
 # output
 # Yes
-n,m = gets.chomp.split(' ').map(&:to_i)
+n, m = gets.chomp.split.map(&:to_i)
 
 if n == m
   puts 'Yes'

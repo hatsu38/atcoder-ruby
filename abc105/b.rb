@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,15 +15,15 @@
 # Yes
 n = gets.to_i
 
-def is_yes?(x)
-  if x % 4 == 0 || x % 7 == 0 || x % 11 == 0
-    puts 'Yes'
-    exit
-  end
+def yes?(x)
+  return unless (x % 4).zero? || (x % 7).zero? || (x % 11).zero?
+
+  puts 'Yes'
+  exit
 end
 
-while n >= 4 do
-  is_yes?(n)
+while n >= 4
+  yes?(n)
   n -= 4
 end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -15,10 +17,10 @@
 # 4
 
 N = gets.chomp.to_i
-strs = gets.chomp.split(' ').map(&:to_i)
+strs = gets.chomp.split.map(&:to_i)
 ans = 0
 mini = strs[0]
-strs.each_with_index do |str, i|
+strs.each_with_index do |str, _i|
   # Eachした値が過去の値と比べ最小値なら、答えに+1と最小値を更新
   if str <= mini
     ans += 1

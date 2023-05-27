@@ -41,7 +41,7 @@ gets.chomp.to_i
 s = gets.chomp
 t = gets.chomp
 
-s_fmt = s.gsub('0', 'o').gsub('1', 'l')
-t_fmt = t.gsub('0', 'o').gsub('1', 'l')
+s_fmt = s.tr('0', 'o').tr('1', 'l')
+t_fmt = t.tr('0', 'o').tr('1', 'l')
 
 puts s_fmt == t_fmt ? 'Yes' : 'No'

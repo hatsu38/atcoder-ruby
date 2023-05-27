@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,13 +14,12 @@
 # 28 27 24
 # output
 # DENIED
-n = gets.to_i
-strs = gets.chomp.split(' ').map(&:to_i)
+gets.to_i
+strs = gets.chomp.split.map(&:to_i)
 
-even_ary = strs.uniq.select{ |num| num.even? }
-if even_ary.all? {|num| num % 3 == 0 || num % 5 == 0 }
+even_ary = strs.uniq.select(&:even?)
+if even_ary.all? { |num| (num % 3).zero? || (num % 5).zero? }
   puts 'APPROVED'
 else
   puts 'DENIED'
 end
-

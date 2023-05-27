@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,12 +15,13 @@
 # output
 # 2
 n = gets.to_i
-strs = gets.chomp.split(' ').map(&:to_i)
+strs = gets.chomp.split.map(&:to_i)
 
-min = 10*100
-strs.each_with_index do |str, idx|
-  break if idx == n-1
-  diff = (strs[0..idx].inject(:+) - strs[(idx+1)..-1].inject(:+)).abs
+min = 10 * 100
+strs.each_with_index do |_str, idx|
+  break if idx == n - 1
+
+  diff = (strs[0..idx].sum - strs[(idx + 1)..].sum).abs
   min = diff if diff < min
 end
 puts min

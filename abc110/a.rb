@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,6 +13,6 @@
 # 6 6 7
 # output
 # 87
-strs = gets.chomp.split(' ').map(&:to_i).sort
+strs = gets.chomp.split.map(&:to_i).sort
 
 puts (strs[-1].to_s + strs[1].to_s).to_i + strs[0]

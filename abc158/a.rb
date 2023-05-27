@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,5 +14,5 @@
 # output
 # Yes
 
-strs = gets.chomp.split('')
+strs = gets.chomp.chars
 puts strs.uniq.count == 1 ? 'No' : 'Yes'

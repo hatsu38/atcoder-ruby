@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -19,15 +21,16 @@
 # output
 # 46
 n = gets.to_i
-strs = n.times.map { gets.chomp.split(' ').map(&:to_i) }
+strs = Array.new(n) { gets.chomp.split.map(&:to_i) }
 
 dp = Array.new(n + 10) { Array.new(3, 0) }
 n.times do |i|
   3.times do |j|
     3.times do |k|
       next if j == k
+
       value = dp[i][j] + strs[i][k]
-      dp[i+1][k] = value if dp[i+1][k] < value
+      dp[i + 1][k] = value if dp[i + 1][k] < value
     end
   end
 end

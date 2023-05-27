@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -17,12 +19,12 @@ n, m = gets.split.map(&:to_i)
 strs = gets.split.map(&:to_i)
 
 strs.each_with_index do |str, idx|
-  if idx == n-1
-    p -1
+  if idx == n - 1
+    p(-1)
     exit
   end
-  if strs[idx+1] - str <= m
-    p strs[idx+1]
+  if strs[idx + 1] - str <= m
+    p strs[idx + 1]
     exit
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,13 +15,12 @@
 # output
 # 5
 
-
-n,k = gets.chomp.split(' ').map(&:to_i)
-strs = gets.chomp.split(' ').map(&:to_i).sort
+_, k = gets.chomp.split.map(&:to_i)
+strs = gets.chomp.split.map(&:to_i).sort
 
 if k >= strs.size
   puts 0
   exit
 end
 strs.slice!(-k, k)
-print strs.inject(:+)
+print strs.sum

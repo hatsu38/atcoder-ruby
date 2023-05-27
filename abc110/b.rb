@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,12 +15,11 @@
 # 100 6 14
 # output
 # War
-n, m, x, y = gets.chomp.split(' ').map(&:to_i)
-x_ary = gets.chomp.split(' ').map(&:to_i)
-y_ary = gets.chomp.split(' ').map(&:to_i)
-if  x>=y || x_ary.max >= y_ary.min
+_, _, x, y = gets.chomp.split.map(&:to_i)
+x_ary = gets.chomp.split.map(&:to_i)
+y_ary = gets.chomp.split.map(&:to_i)
+if x >= y || x_ary.max >= y_ary.min
   puts 'War'
   exit
 end
-puts [*x_ary.max..y_ary.min].all? { |num| [*x+1..y].include?(num) } ? 'No War' : 'War'
-
+puts [*x_ary.max..y_ary.min].all? { |num| [*x + 1..y].include?(num) } ? 'No War' : 'War'

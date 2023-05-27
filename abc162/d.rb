@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,8 +15,8 @@
 # output
 # 1800
 
-n = gets.to_i
-s = gets.chomp.split('')
+gets.to_i
+s = gets.chomp.chars
 
 # 文字列sのi,j,k番目が異なる
 # 隣あう数字の差が異なる
@@ -22,12 +24,12 @@ s = gets.chomp.split('')
 
 ans = 0
 # Rの場所固定
-s.flat_map.with_index{ |e, i| e == 'R' ? i : [] }.each do |r|
+s.flat_map.with_index { |e, i| e == 'R' ? i : [] }.each do |r|
   # Gの場所固定
-  s.flat_map.with_index{ |e, i| e == 'G' ? i : [] }.each do |g|
+  s.flat_map.with_index { |e, i| e == 'G' ? i : [] }.each do |g|
     # Bの場所固定
-    s.flat_map.with_index{ |e, i| e == 'B' ? i : [] }.each do |b|
-      i,j,k = [r, g, b].sort
+    s.flat_map.with_index { |e, i| e == 'B' ? i : [] }.each do |b|
+      i, j, k = [r, g, b].sort
       ans += 1 if j - i != k - j
     end
   end

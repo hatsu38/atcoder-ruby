@@ -67,11 +67,11 @@
 # output
 # Yes
 
-n, m, h, k = gets.chomp.split(' ').map(&:to_i)
+n, m, h, k = gets.chomp.split.map(&:to_i)
 S = gets.chomp
 hash = Hash.new(0)
 Array.new(m) do
-  hash[gets.to_s.chomp.split(' ').map(&:to_i)] = true
+  hash[gets.to_s.chomp.split.map(&:to_i)] = true
 end
 
 x = 0

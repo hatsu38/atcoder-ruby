@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,12 +15,12 @@
 # output
 # 32.000000000000
 
-n, k = gets.chomp.split(' ').map(&:to_i)
-strs = gets.chomp.split(' ').map(&:to_i)
+n, k = gets.chomp.split.map(&:to_i)
+strs = gets.chomp.split.map(&:to_i)
 
-max_num = sum = strs[0...k].inject(:+)
+max_num = sum = strs[0...k].sum
 [*k...n].each do |i|
   sum = sum - strs[i - k] + strs[i]
   max_num = sum if max_num < sum
 end
-puts (max_num+k).to_f/2
+puts (max_num + k).to_f / 2

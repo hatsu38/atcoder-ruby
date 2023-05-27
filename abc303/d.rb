@@ -45,10 +45,10 @@
 # 40
 # ```
 
-X, Y, Z = gets.chomp.split(' ').map(&:to_i)
+X, Y, Z = gets.chomp.split.map(&:to_i)
 S = gets.chomp.chars
 
-dp = (S.size + 1).times.map { Array.new(2, Float::INFINITY) }
+dp = Array.new((S.size + 1)) { Array.new(2, Float::INFINITY) }
 dp[0] = [0, Z]
 
 S.size.times.each do |i|

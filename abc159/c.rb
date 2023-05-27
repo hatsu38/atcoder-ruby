@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -14,4 +16,4 @@
 
 s = gets.to_f
 
-puts (s/3)**3.to_f
+puts (s / 3)**3.to_f

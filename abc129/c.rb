@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -17,19 +19,19 @@
 # output
 # 608200469
 
-n, m = gets.chomp.split(' ').map(&:to_i)
-strs = Hash.new
-m.times.map { strs[gets.to_i] = true }
-MOD = 10**9+7
-dp = Array.new(n+10, 0)
+n, m = gets.chomp.split.map(&:to_i)
+strs = {}
+Array.new(m) { strs[gets.to_i] = true }
+MOD = (10**9) + 7
+dp = Array.new(n + 10, 0)
 dp[0] = 1
 
 n.times do |idx|
   if strs[idx]
     dp[idx] = 0
   else
-    dp[idx+1] += dp[idx] if !strs[idx+1]
-    dp[idx+2] += dp[idx] if !strs[idx+2]
+    dp[idx + 1] += dp[idx] unless strs[idx + 1]
+    dp[idx + 2] += dp[idx] unless strs[idx + 2]
   end
 end
 print dp[n] % MOD

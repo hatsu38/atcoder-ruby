@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,7 +14,7 @@
 # +-++
 # output
 # 2
-strs = gets.chomp.split('')
+strs = gets.chomp.chars
 ans = 0
 strs.each do |str|
   if str == '+'

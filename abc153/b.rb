@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,6 +14,6 @@
 # 31 41 59 26 53
 # output
 # No
-h, n= gets.chomp.split(' ').map(&:to_i)
-strs = gets.chomp.split(' ').map(&:to_i).sort
-puts strs.inject(:+) >= h ? 'Yes' : 'No'
+h, = gets.chomp.split.map(&:to_i)
+strs = gets.chomp.split.map(&:to_i).sort
+puts strs.sum >= h ? 'Yes' : 'No'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,6 +13,6 @@
 # 5 7
 # output
 # 24
-a,b = gets.chomp.split(" ").map(&:to_i)
+a, b = gets.chomp.split.map(&:to_i)
 
-puts (a-1)*(b-1)
+puts (a - 1) * (b - 1)

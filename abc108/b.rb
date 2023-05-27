@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,7 +13,7 @@
 # 31 -41 -59 26
 # output
 # -126 -64 -36 -131
-x1, y1, x2, y2 = gets.chomp.split(' ').map(&:to_i)
+x1, y1, x2, y2 = gets.chomp.split.map(&:to_i)
 x_dist = x1 - x2
 y_dist = y1 - y2
 

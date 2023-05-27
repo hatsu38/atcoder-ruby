@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -31,7 +33,5 @@
 
 h = gets.to_i
 n = 0
-while h >= 2**n
-  n += 1
-end
-puts 2 ** (n-1) * 2 -1
+n += 1 while h >= 2**n
+puts ((2**(n - 1)) * 2) - 1

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -22,11 +24,11 @@
 # output
 # 139815
 
-h, n = gets.chomp.split(' ').map(&:to_i)
-strs = n.times.map{ gets.chomp.split(' ').map(&:to_i) }
+h, n = gets.chomp.split.map(&:to_i)
+strs = Array.new(n) { gets.chomp.split.map(&:to_i) }
 print strs
 
-cost_perf = strs.map{ |ary| ary[1].to_f / ary[0].to_f }
+cost_perf = strs.map { |ary| ary[1].to_f / ary[0] }
 cost_per_min_index = cost_perf.index(cost_perf.min)
 print cost_per_min_index
 # コスパの良いIndexの魔力を足していく。モンスターの体力がなくなるまで。
@@ -36,6 +38,6 @@ while h >= strs.max
   h -= strs[cost_per_min_index]
 end
 
-puts ans += strs.select{ |ary| h <= ary[0] }.min_by{ |ary| ary[1] }
+puts ans + strs.select { |ary| h <= ary[0] }.min_by { |ary| ary[1] }
 
 # h以下で、最も

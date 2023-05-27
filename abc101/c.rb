@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,13 +15,13 @@
 # 2 3 1 4
 # output
 # 2
-n,k = gets.chomp.split(' ').map(&:to_i)
-strs = gets.chomp.split(' ').map(&:to_i).sort
+n, k = gets.chomp.split.map(&:to_i)
+gets.chomp.split.map(&:to_i).sort
 ans = 0
 
-while(n > 0)
+while n.positive?
   n -= k
-  n += 1 if n > 0
+  n += 1 if n.positive?
   ans += 1
 end
 

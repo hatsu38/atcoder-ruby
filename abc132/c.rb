@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -14,6 +16,6 @@
 # output
 # 42685
 N = gets.chomp.to_i
-strs = gets.chomp.split(' ').map(&:to_i).sort
+strs = gets.chomp.split.map(&:to_i).sort
 half_index = strs.size / 2
-puts strs[half_index] - strs[half_index-1]
+puts strs[half_index] - strs[half_index - 1]

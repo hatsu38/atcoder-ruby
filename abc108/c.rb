@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,14 +14,14 @@
 # output
 # 27
 
-n,k = gets.chomp.split(' ').map(&:to_i)
+n, k = gets.chomp.split.map(&:to_i)
 
 if k.even?
-  mod_zero = [*1..n].select{ |num| num % k == 0 }
-  mod_half_k = [*1..n].select{ |num| num % k == k/2 }
-  puts mod_zero.size ** 3 + mod_half_k.size ** 3
+  mod_zero = [*1..n].select { |num| (num % k).zero? }
+  mod_half_k = [*1..n].select { |num| num % k == k / 2 }
+  puts (mod_zero.size**3) + (mod_half_k.size**3)
 else
-  puts [*1..n].select{ |num| num % k == 0 }.size ** 3
+  puts [*1..n].count { |num| (num % k).zero? }**3
 end
 
 # 計算量が間に合わない全探索

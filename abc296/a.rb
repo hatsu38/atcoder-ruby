@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -8,11 +10,11 @@
 # strs = h.times.map{ gets.chomp.split('') }
 
 # 問題文
-# N 人が一列に並んでいます。列の状態は長さ 
-# N の文字列 
-# S で与えられ、前から 
-# i 番目の人は 
-# S の 
+# N 人が一列に並んでいます。列の状態は長さ
+# N の文字列
+# S で与えられ、前から
+# i 番目の人は
+# S の
 # i 文字目が M のとき男性、F のとき女性です。
 
 # 男女が交互に並んでいるかどうか判定してください。
@@ -22,7 +24,7 @@
 # 制約
 # 1≤N≤100
 # N は整数である
-# S は M および F のみからなる長さ 
+# S は M および F のみからなる長さ
 # N の文字列である
 # 入力
 # 入力は以下の形式で標準入力から与えられる。
@@ -38,7 +40,11 @@
 # OUTPUT
 # Yes
 
-m = gets.chomp
+gets.chomp
 str = gets.chomp
 
-puts (str.include?('MM') || str.include?('FF')) ? 'No' : 'Yes'
+if str.include?('MM') || str.include?('FF')
+  puts 'No'
+else
+  puts 'Yes'
+end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -18,9 +20,9 @@
 
 n = gets.to_i
 arys = []
-arys << gets.chomp.split(' ').map(&:to_i)
-(n-2).times do
-  ary = gets.chomp.split(' ').map(&:to_i)
+arys << gets.chomp.split.map(&:to_i)
+(n - 2).times do
+  ary = gets.chomp.split.map(&:to_i)
   puts arys.index(ary[0])
   puts arys.index(ary[1])
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -19,4 +21,3 @@ elsif R >= 2800
 else
   puts 'ARC'
 end
-

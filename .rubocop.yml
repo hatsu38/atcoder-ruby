@@ -1,0 +1,11 @@
+
+require:
+  - rubocop-performance
+
+AllCops:
+  DisplayCopNames: true
+  NewCops: enable
+  TargetRubyVersion: 2.7
+
+Naming/MethodParameterName:
+  MinNameLength: 1

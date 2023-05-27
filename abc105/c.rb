@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -15,14 +17,15 @@
 n = gets.to_i
 # nが奇数のとき、s0 = 1
 ans = []
-while true do
-  if n % 2 == 1
+loop do
+  if n.odd?
     ans.unshift(1)
     n -= 1
   else
     ans.unshift(0)
   end
-  break if n == 0 || n == 1
+  break if [0, 1].include?(n) # rubocop:disable Performance/CollectionLiteralInLoop
+
   n /= -2
 end
-puts ans.join('')
+puts ans.join

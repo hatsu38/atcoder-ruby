@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -23,9 +25,9 @@
 # output
 # 7
 
-n, d, k = gets.chomp.split(' ').map(&:to_i)
-lr_ary = d.times.map{ gets.chomp.split(' ') }
-st_ary = k.times.map{ gets.chomp.split(' ') }
+_, d, k = gets.chomp.split.map(&:to_i)
+lr_ary = Array.new(d) { gets.chomp.split }
+st_ary = Array.new(k) { gets.chomp.split }
 
 print lr_ary
 puts ''

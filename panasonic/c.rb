@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,5 +14,5 @@
 # output
 # 100
 
-a,b,c = gets.chomp.split(' ').map(&:to_i)
-print (Math.sqrt(c) - Math.sqrt(a) - Math.sqrt(b) > 0) ? 'Yes' : 'No'
+a, b, c = gets.chomp.split.map(&:to_i)
+print (Math.sqrt(c) - Math.sqrt(a) - Math.sqrt(b)).positive? ? 'Yes' : 'No'

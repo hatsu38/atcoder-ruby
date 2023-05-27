@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -19,7 +21,6 @@
 # tapu
 # ushi
 
-
 n = gets.to_i
 strs = []
 n.times do
@@ -27,8 +28,8 @@ n.times do
 end
 
 ary = strs.group_by(&:itself)
-lists = ary.map{|k, v| [k, v.count]}.sort
-max = ary.map{|k, v| v.count}.max
+lists = ary.map { |k, v| [k, v.count] }.sort
+max = ary.map { |_k, v| v.count }.max
 lists.each do |k, v|
   puts k if v == max
 end

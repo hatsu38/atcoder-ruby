@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,7 +14,6 @@
 # output
 # 3234566667
 
-
 k = gets.to_i
 
 # 100番目のルンルン数は？
@@ -20,10 +21,8 @@ k = gets.to_i
 ans = 0
 num = 0
 def runrun?(num)
-  num.to_s.split('').each_with_index do |n, i|
-    if (num[i] - num[i+1]).abs != 1
-      return false
-    end
+  num.to_s.chars.each_with_index do |_n, i|
+    return false if (num[i] - num[i + 1]).abs != 1
   end
   true
 end

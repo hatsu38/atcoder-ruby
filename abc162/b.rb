@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -14,4 +16,4 @@
 
 n = gets.to_i
 
-puts (0..n).to_a.select { |num| (num % 3 != 0 && num % 5 != 0) }.inject(:+)
+puts (0..n).to_a.select { |num| (num % 3 != 0 && num % 5 != 0) }.sum

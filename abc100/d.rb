@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -18,10 +20,10 @@
 # output
 # 54
 
-cake_kind_cnt,cake_select_cnt = gets.chomp.split(" ").map(&:to_i)
+cake_kind_cnt, cake_select_cnt = gets.chomp.split.map(&:to_i)
 strs = []
 cake_kind_cnt.times do
-  strs << gets.chomp.split(" ").map(&:to_i)
+  strs << gets.chomp.split.map(&:to_i)
 end
 
 if cake_select_cnt < 1
@@ -31,13 +33,13 @@ end
 
 sums = []
 calculated_strs = []
-[1,-1].repeated_permutation(3) do |n|
+[1, -1].repeated_permutation(3) do |n|
   calculated_strs = strs.collect do |x, y, z|
-    x * n[0] + y * n[1] + z * n[2]
+    (x * n[0]) + (y * n[1]) + (z * n[2])
   end
   calculated_strs.sort!
   calculated_strs.reverse!
-  sums << calculated_strs[0..(cake_select_cnt-1)].inject(:+)
+  sums << calculated_strs[0..(cake_select_cnt - 1)].sum
 end
 
 puts sums.max

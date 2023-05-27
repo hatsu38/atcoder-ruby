@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -19,4 +21,4 @@ end
 
 a = gets.to_i
 b = gets.to_i
-puts a+b
+puts a + b

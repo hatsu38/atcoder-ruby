@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,7 +14,7 @@
 # ASSA
 # output
 # Yes
-strs = gets.chomp.split('')
+strs = gets.chomp.chars
 if strs.count(strs.uniq[0]) == 2 && strs.count(strs.uniq[1]) == 2
   puts 'Yes'
 else

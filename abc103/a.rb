@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,11 +13,12 @@
 # 1 6 3
 # output
 # 5
-strs = gets.chomp.split(" ").map(&:to_i).sort
+strs = gets.chomp.split.map(&:to_i).sort
 
 ans = 0
 strs.each_with_index do |num, idx|
   break if idx == strs.length - 1
-  ans += strs[idx+1] - num
+
+  ans += strs[idx + 1] - num
 end
 puts ans

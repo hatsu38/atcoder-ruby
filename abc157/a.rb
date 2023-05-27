@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,4 +14,4 @@
 # output
 # 3
 n = gets.to_i
-puts n.odd? ? (n+1)/2 : n/2
+puts n.odd? ? (n + 1) / 2 : n / 2

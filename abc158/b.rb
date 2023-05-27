@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,12 +14,12 @@
 # output
 # 4
 
-n, blue, red = gets.chomp.split(' ').map(&:to_i)
+n, blue, red = gets.chomp.split.map(&:to_i)
 baul_cnt = blue + red
 repeat_cnt = n / baul_cnt
 amari_cnt = n % baul_cnt
 
-plus_amri = blue >= amari_cnt ? amari_cnt : blue
+plus_amri = [blue, amari_cnt].min
 
 puts (repeat_cnt * blue) + plus_amri
 

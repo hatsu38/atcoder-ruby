@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -15,8 +17,8 @@
 # output
 # 3
 
-N = gets.chomp.split(" ").map(&:to_i)
-strs = gets.chomp.split(" ").map(&:to_i)
+N = gets.chomp.split.map(&:to_i)
+strs = gets.chomp.split.map(&:to_i)
 
 i = 0
 strs.select!(&:even?)

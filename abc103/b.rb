@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -12,11 +14,11 @@
 # tokyo
 # output
 # Yes
-S = gets.chomp.split('')
-T = gets.chomp.split('')
+S = gets.chomp.chars
+T = gets.chomp.chars
 
-S.each_with_index do |str, idx|
-  if S[idx+1..-1]+S[0..idx] == T
+S.each_with_index do |_str, idx|
+  if S[idx + 1..] + S[0..idx] == T
     puts 'Yes'
     exit
   end

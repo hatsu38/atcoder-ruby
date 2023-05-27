@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,9 +15,5 @@
 # output
 # 10
 
-N, G = gets.chomp.split(" ").map(&:to_i)
-strs = N.times.map{gets.split.map(&:to_i)}
-
-
-
-
+N, G = gets.chomp.split.map(&:to_i)
+Array.new(N) { gets.split.map(&:to_i) }

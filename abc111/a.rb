@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -11,12 +13,12 @@
 # 119
 # output
 # 991
-n = gets.chomp.split('').map(&:to_i)
+n = gets.chomp.chars.map(&:to_i)
 n.each do |num|
   if num == 1
-    print num+8
+    print num + 8
   elsif num == 9
-    print num-8
+    print num - 8
   else
     print num
   end

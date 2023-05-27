@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,8 +15,8 @@
 # blue
 # output
 # 5 4
-s, t = gets.chomp.split(' ')
-a, b = gets.chomp.split(' ').map(&:to_i)
+s, = gets.chomp.split
+a, b = gets.chomp.split.map(&:to_i)
 u = gets.chomp
 
 if u == s

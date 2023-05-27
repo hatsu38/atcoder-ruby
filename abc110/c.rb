@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,6 +15,6 @@
 # output
 # Yes
 
-s = gets.chomp.split('')
-t = gets.chomp.split('')
-puts s.group_by(&:itself).map{|k, v| v.size} == t.group_by(&:itself).map{|k, v| v.size} ? 'Yes' : 'No'
+s = gets.chomp.chars
+t = gets.chomp.chars
+puts s.group_by(&:itself).map { |_k, v| v.size } == t.group_by(&:itself).map { |_k, v| v.size } ? 'Yes' : 'No'

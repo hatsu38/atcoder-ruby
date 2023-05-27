@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,10 +15,10 @@
 # output
 # Yes
 
-n, m = gets.chomp.split(' ').map(&:to_i)
-arys = gets.chomp.split(' ').map(&:to_i)
-sums = arys.inject(:+)
-min_base_point = sums / (4*m).to_f
+_, m = gets.chomp.split.map(&:to_i)
+arys = gets.chomp.split.map(&:to_i)
+sums = arys.sum
+min_base_point = sums / (4 * m).to_f
 
-plus_ary = arys.select { |num| num >= min_base_point }.size
+plus_ary = arys.count { |num| num >= min_base_point }
 puts plus_ary >= m ? 'Yes' : 'No'

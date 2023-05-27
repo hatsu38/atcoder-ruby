@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -17,12 +19,11 @@
 # 7 2
 # output
 # 17
-n, max_w = gets.chomp.split(' ').map(&:to_i)
-strs = n.times.map { gets.chomp.split(' ').map(&:to_i) }
+n, max_w = gets.chomp.split.map(&:to_i)
+strs = Array.new(n) { gets.chomp.split.map(&:to_i) }
 
 dp = Array.new(max_w + 10, 0)
 dp[0] = 0
-ans = 0
 strs.each do |w, v|
   (max_w - w).downto(0) do |idx|
     nv = dp[idx] + v

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,4 +15,4 @@
 # Yes
 
 strs = gets.chomp
-puts strs.gsub(/hi/,"") == '' ? 'Yes' : 'No'
+puts strs.gsub(/hi/, '') == '' ? 'Yes' : 'No'

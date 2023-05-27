@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -26,7 +28,7 @@
 # output
 # Yes
 
-bingos = 3.times.map{ gets.chomp.split(' ').map(&:to_i) }.flatten
+bingos = Array.new(3) { gets.chomp.split.map(&:to_i) }.flatten
 n = gets.to_i
 arys = []
 n.times do
@@ -38,7 +40,14 @@ arys.each do |ary|
   bingos[idx] = nil if idx
 end
 
-if (bingos[0].nil? && bingos[3].nil? && bingos[6].nil?) || (bingos[1].nil? && bingos[4].nil? && bingos[7].nil?) || (bingos[2].nil? && bingos[5].nil? && bingos[8].nil?) || (bingos[0].nil? && bingos[4].nil? && bingos[8].nil?) || (bingos[2].nil? && bingos[4].nil? && bingos[6].nil?) || (bingos[0].nil? && bingos[1].nil? && bingos[2].nil?) || (bingos[3].nil? && bingos[4].nil? && bingos[5].nil?) || (bingos[6].nil? && bingos[7].nil? && bingos[8].nil?)
+if (bingos[0].nil? && bingos[3].nil? && bingos[6].nil?) ||
+   (bingos[1].nil? && bingos[4].nil? && bingos[7].nil?) ||
+   (bingos[2].nil? && bingos[5].nil? && bingos[8].nil?) ||
+   (bingos[0].nil? && bingos[4].nil? && bingos[8].nil?) ||
+   (bingos[2].nil? && bingos[4].nil? && bingos[6].nil?) ||
+   (bingos[0].nil? && bingos[1].nil? && bingos[2].nil?) ||
+   (bingos[3].nil? && bingos[4].nil? && bingos[5].nil?) ||
+   (bingos[6].nil? && bingos[7].nil? && bingos[8].nil?)
   print 'Yes'
 else
   print 'No'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -22,7 +24,8 @@
 s = gets.chomp
 q = gets.to_i
 is_reverse = false
-l, r = "", ""
+l = ''
+r = ''
 q.times do
   t = gets.split
   if t[0].to_i == 1

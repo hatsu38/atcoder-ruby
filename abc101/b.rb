@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -14,8 +16,8 @@
 # Yes
 
 N = gets.chomp
-sum = N.split('').map(&:to_i).inject(:+)
-if N.to_i % sum == 0
+sum = N.chars.sum(&:to_i)
+if (N.to_i % sum).zero?
   puts 'Yes'
 else
   puts 'No'

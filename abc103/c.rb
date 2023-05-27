@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -13,11 +15,11 @@
 # output
 # 10
 
-N = gets.chomp.split(" ").map(&:to_i)
-strs = gets.chomp.split(" ").map(&:to_i)
+N = gets.chomp.split.map(&:to_i)
+strs = gets.chomp.split.map(&:to_i)
 
 sum = 0
 strs.each do |num|
-  sum += num-1
+  sum += num - 1
 end
 puts sum

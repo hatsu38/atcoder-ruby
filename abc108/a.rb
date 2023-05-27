@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ### 例
 # N
 # a_1 b_1
@@ -14,5 +16,5 @@
 k = gets.to_i
 
 even_cnt = k / 2
-odd_cnt = k.even? ? even_cnt : even_cnt+1
+odd_cnt = k.even? ? even_cnt : even_cnt + 1
 puts even_cnt * odd_cnt
