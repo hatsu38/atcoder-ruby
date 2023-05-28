@@ -53,11 +53,11 @@ dp[0] = [0, Z]
 
 S.size.times.each do |i|
   if S[i] == 'a'
-    dp[i + 1][0] = [dp[i][0] + Z, dp[i][1] + Z + X].min
-    dp[i + 1][1] = [dp[i][1] + Y, dp[i][0] + Z + Y].min
+    dp[i + 1][0] = [dp[i][0] + X, dp[i][1] + Z + X].min
+    dp[i + 1][1] = [dp[i][0] + Z + Y, dp[i][1] + Y].min
   else
     dp[i + 1][0] = [dp[i][0] + Y, dp[i][1] + Z + Y].min
-    dp[i + 1][1] = [dp[i][1] + X, dp[i][0] + Z + Z].min
+    dp[i + 1][1] = [dp[i][0] + Z + X, dp[i][1] + X].min
   end
 end
 puts dp[S.size].min
