@@ -9,3 +9,9 @@ AllCops:
 
 Naming/MethodParameterName:
   MinNameLength: 1
+
+Style/BlockComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
