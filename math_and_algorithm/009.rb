@@ -18,5 +18,18 @@ Yes
 =end
 
 n, s = gets.chomp.split.map(&:to_i)
+a_ary = gets.chomp.split.map(&:to_i)
 
-puts (1..n).to_a.repeated_permutation(2).filter { |a, b| a + b <= s }.size
+dp = Array.new(n + 1) { Array.new(s + 1, false) }
+dp[0][0] = true
+
+n.times do |i|
+  (s + 1).times do |j|
+    if dp[i][j]
+      dp[i + 1][j] = true
+      dp[i + 1][j + a_ary[i]] = true
+    end
+  end
+end
+
+puts dp[n][s] ? 'Yes' : 'No'
