@@ -1,35 +1,19 @@
 =begin
-N 枚のカードが横一列に並べられています。左から
-i 番目
-(1≤i≤N) のカードには整数
-A
-i
-​
-  が書かれています。
+赤・青のカードが各 
+1 枚ずつあり、あなたはそれぞれのカードに 
+1 以上 
+N 以下の整数を 
+1 つ書き込みます。
 
-カードの中からいくつかを選んで、合計がちょうど
-S となるようにする方法はありますか。
+カードに書かれた整数の合計が 
+S 以下となる書き方は、いくつありますか？
 
 input
-3 11
-2 5 9
+869 120
 output
-Yes
+7140
 =end
 
 n, s = gets.chomp.split.map(&:to_i)
-a_ary = gets.chomp.split.map(&:to_i)
 
-dp = Array.new(n + 1) { Array.new(s + 1, false) }
-dp[0][0] = true
-
-n.times do |i|
-  (s + 1).times do |j|
-    if dp[i][j]
-      dp[i + 1][j] = true
-      dp[i + 1][j + a_ary[i]] = true
-    end
-  end
-end
-
-puts dp[n][s] ? 'Yes' : 'No'
+puts (1..n).to_a.repeated_permutation(2).filter { |a, b| a + b <= s }.size
