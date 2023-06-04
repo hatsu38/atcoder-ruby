@@ -1,12 +1,12 @@
 =begin
-N 個の正の整数 
-A 
+N 個の正の整数
+A
 1
 ​
- ,A 
+ ,A
 2
 ​
- ,…,A 
+ ,…,A
 N
 ​
   の最小公倍数を求めてください。
@@ -18,7 +18,7 @@ output
 252
 =end
 
-n = gets.chomp.to_i
+gets.chomp.to_i
 a_ary = gets.chomp.split.map(&:to_i).sort
 
-puts a_ary.inject { |a, b| a.lcm(b) }
+puts(a_ary.inject { |a, b| a.lcm(b) })

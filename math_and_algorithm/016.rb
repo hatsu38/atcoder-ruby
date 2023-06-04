@@ -1,16 +1,15 @@
 =begin
-N 個の正の整数 
-A 
+N 個の正の整数
+A
 1
 ​
- ,A 
+ ,A
 2
 ​
- ,…,A 
+ ,…,A
 N
 ​
   の最大公約数を求めてください。
-
 
 input
 3
@@ -19,7 +18,7 @@ output
 6
 =end
 
-n = gets.chomp.to_i
+gets.chomp.to_i
 a_ary = gets.chomp.split.map(&:to_i).sort
 
-puts a_ary.inject { |a, b| a.gcd(b) }
+puts(a_ary.inject { |a, b| a.gcd(b) })
