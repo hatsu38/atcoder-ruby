@@ -59,62 +59,47 @@ Yes
 
 require 'prime'
 
-res = %w[s n u k]
-
 H, W = gets.chomp.split.map(&:to_i)
 
 S = []
 H.times do |i|
-  S[i] = gets.chomp.chars
+  S[i] = gets.chomp.chars.map { |c| [c, false] }
 end
 
-dx = [-1, 0, 1, 0]
-dy = [0, -1, 0, 1]
-paths = [] # 全ての経路を保存する配列
-queue = [[[0, 0]]] # 初期経路のスタック。座標の配列を要素とする。
+NEXT_CHAR = {
+  's' => 'n',
+  'n' => 'u',
+  'u' => 'k',
+  'k' => 'e',
+  'e' => 's'
+}
 
-if S[0][0] != 's'
+unless S[0][0][0] == 's'
   puts 'No'
   exit
 end
 
-def in_grid?(x, y, h, w)
-  0 <= x && x < h && 0 <= y && y < w
-end
+queue = [[0, 0, S[0][0][0]]]
 
-while queue.size > 0
-  path = queue.pop # 現在の経路を取り出す
-  x, y = path.last # 現在の経路の最後の座標
-  if [x, y] == [H - 1, W - 1]
-    paths << path
-    next
-  end
-  4.times do |i|
-    nx, ny = x + dx[i], y + dy[i]
-    if in_grid?(nx, ny, H, W) && !path.include?([nx, ny])
-      new_path = path.dup
-      new_path << [nx, ny]
-      queue << new_path
-    end
-  end
-end
-
-paths.each do |path|
-  # puts "=" * 10
-  correct_count = 0
-  find_index = 0
-  path.each do |x, y|
-    # puts "res[find_index] #{res[find_index]}"
-    # puts "S[x][y] #{S[x][y]}"
-    if S[x][y] == res[find_index]
-      find_index >= 3 ? find_index = 0 : find_index += 1
-      correct_count += 1
-    end
-  end
-  if correct_count == path.size
+until queue.empty?
+  h, w, c = queue.pop
+  if h == H - 1 && w == W - 1
     puts 'Yes'
     exit
   end
+  prev_row = h.positive? ? S[h - 1] : nil
+  current_row = S[h]
+  next_row = h < H - 1 ? S[h + 1] : nil
+  current_row[w][1] = true
+  next_c = NEXT_CHAR[c]
+
+  queue << [h - 1, w, next_c] if h.positive? && !prev_row[w][1] && prev_row[w][0] == next_c
+
+  queue << [h + 1, w, next_c] if h < H - 1 && !next_row[w][1] && next_row[w][0] == next_c
+
+  queue << [h, w - 1, next_c] if w.positive? && !current_row[w - 1][1] && current_row[w - 1][0] == next_c
+
+  queue << [h, w + 1, next_c] if w < W - 1 && !current_row[w + 1][1] && current_row[w + 1][0] == next_c
 end
 
 puts 'No'
