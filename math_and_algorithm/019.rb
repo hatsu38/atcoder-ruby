@@ -13,10 +13,10 @@ output
 N = gets.chomp.to_i
 a_ary = gets.chomp.split.map(&:to_i).sort
 
-hash = Hash.new { |hash, key| hash[key] = [] }
+hash = Hash.new { |a, key| a[key] = [] }
 
 hash[1] = a_ary.count(1)
 hash[2] = a_ary.count(2)
 hash[3] = a_ary.count(3)
 
-puts hash[1] * (hash[1] - 1) / 2 + hash[2] * (hash[2] - 1) / 2 + hash[3] * (hash[3] - 1) / 2
+puts (hash[1] * (hash[1] - 1) / 2) + (hash[2] * (hash[2] - 1) / 2) + (hash[3] * (hash[3] - 1) / 2)

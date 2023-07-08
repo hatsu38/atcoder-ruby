@@ -65,5 +65,5 @@ h, = gets.chomp.split.map(&:to_i)
 strs = Array.new(h) { gets.chomp }
 
 strs.each_with_index do |str, _idx|
-  puts str.gsub!(/TT/, 'PC')
+  puts str.gsub!('TT', 'PC')
 end

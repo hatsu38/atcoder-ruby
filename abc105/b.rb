@@ -16,7 +16,7 @@
 n = gets.to_i
 
 def yes?(x)
-  return unless (x % 4).zero? || (x % 7).zero? || (x % 11).zero?
+  return false unless (x % 4).zero? || (x % 7).zero? || (x % 11).zero?
 
   puts 'Yes'
   exit

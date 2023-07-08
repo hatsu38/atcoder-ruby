@@ -15,4 +15,4 @@
 # Yes
 
 strs = gets.chomp
-puts strs.gsub(/hi/, '') == '' ? 'Yes' : 'No'
+puts strs.gsub('hi', '') == '' ? 'Yes' : 'No'
