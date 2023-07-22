@@ -20,4 +20,7 @@ Style/MutableConstant:
   Enabled: false
 
 Layout/LineLength:
-  Max: 140
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
