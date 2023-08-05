@@ -76,17 +76,14 @@ end
 bfs = []
 bfs << [1, 1]
 step_counter = (0...N).map do
-  Array.new(M,
-            0)
+  Array.new(M, 0)
 end
-step_counter[1][1] =
-  1
+step_counter[1][1] = 1
 visited_corners = (0...N).map do
-  Array.new(M,
-            0)
+  Array.new(M, 0)
 end
-visited_corners[1][1] =
-  1
+visited_corners[1][1] = 1
+
 until bfs.empty?
   now_i, now_j = bfs.shift
 
@@ -94,61 +91,45 @@ until bfs.empty?
   offset = 0
   while S[now_i + offset - 1][now_j].zero?
     offset -= 1
-    step_counter[now_i + offset][now_j] =
-      1
+    step_counter[now_i + offset][now_j] = 1
   end
   if visited_corners[now_i + offset][now_j].zero?
-    bfs << [
-      now_i + offset, now_j
-    ]
-    visited_corners[now_i + offset][now_j] =
-      1
+    bfs << [now_i + offset, now_j]
+    visited_corners[now_i + offset][now_j] = 1
   end
 
   # down
   offset = 0
   while S[now_i + offset + 1][now_j].zero?
     offset += 1
-    step_counter[now_i + offset][now_j] =
-      1
+    step_counter[now_i + offset][now_j] = 1
   end
   if visited_corners[now_i + offset][now_j].zero?
-    bfs << [
-      now_i + offset, now_j
-    ]
-    visited_corners[now_i + offset][now_j] =
-      1
+    bfs << [now_i + offset, now_j]
+    visited_corners[now_i + offset][now_j] = 1
   end
 
   # rignt
   offset = 0
   while S[now_i][now_j + offset + 1].zero?
     offset += 1
-    step_counter[now_i][now_j + offset] =
-      1
+    step_counter[now_i][now_j + offset] = 1
   end
   if visited_corners[now_i][now_j + offset].zero?
-    bfs << [
-      now_i, now_j + offset
-    ]
-    visited_corners[now_i][now_j + offset] =
-      1
+    bfs << [now_i, now_j + offset]
+    visited_corners[now_i][now_j + offset] = 1
   end
 
   # left
   offset = 0
   while S[now_i][now_j + offset - 1].zero?
     offset -= 1
-    step_counter[now_i][now_j + offset] =
-      1
+    step_counter[now_i][now_j + offset] = 1
   end
   next unless visited_corners[now_i][now_j + offset].zero?
 
-  bfs << [
-    now_i, now_j + offset
-  ]
-  visited_corners[now_i][now_j + offset] =
-    1
+  bfs << [now_i, now_j + offset]
+  visited_corners[now_i][now_j + offset] = 1
 end
 
 puts step_counter.sum(&:sum)
