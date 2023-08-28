@@ -29,23 +29,23 @@ Siの j文字目と一致します。
 2≤H,W≤500
 H,W は整数S iは英小文字からなる長さ W の文字列
 
-# input
+# 入力例
 2 3
 sns
 euk
 
-# output
+# 出力例
 Yes
 
-# input
+# 入力例
 2 2
 ab
 cd
 
-# output
+# 出力例
 No
 
-# input
+# 入力例
 5 7
 skunsek
 nukesnu
@@ -53,7 +53,7 @@ ukeseku
 nsnnesn
 uekukku
 
-# output
+# 出力例
 Yes
 =end
 

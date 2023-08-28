@@ -9,7 +9,7 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 9
 # basic
 # c
@@ -20,7 +20,7 @@
 # ocaml
 # lua
 # assembly
-# output
+# 出力例
 # Yes
 
 h = gets.to_i

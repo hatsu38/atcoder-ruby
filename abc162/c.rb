@@ -9,9 +9,9 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 200
-# output
+# 出力例
 # 10813692
 
 k = gets.to_i

@@ -1,9 +1,9 @@
 =begin
 N! の値を求めてください。
 
-input
+入力例
 5
-output
+出力例
 120
 =end
 

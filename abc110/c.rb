@@ -9,10 +9,10 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # abcdefghijklmnopqrstuvwxyz
 # ibyhqfrekavclxjstdwgpzmonu
-# output
+# 出力例
 # Yes
 
 s = gets.chomp.chars

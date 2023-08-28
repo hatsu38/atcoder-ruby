@@ -23,7 +23,7 @@ ciは英大文字もしくは英小文字
 ti≠1 ならばxi=0 かつci= 'a'
 N,Q,ti,xiはすべて整数
 
-# input
+# 入力例
 7
 AtCoder
 5
@@ -33,10 +33,10 @@ AtCoder
 2 0 a
 1 4 Y
 
-# output
+# 出力例
 atcYber
 
-# input
+# 入力例
 35
 TheQuickBrownFoxJumpsOverTheLazyDog
 10
@@ -51,7 +51,7 @@ TheQuickBrownFoxJumpsOverTheLazyDog
 3 0 a
 1 15 i
 
-# output
+# 出力例
 TEEQUICKBROWMFiXJUGPFOVERTBELAZYDOG
 
 =end

@@ -9,13 +9,13 @@
 # N = gets.to_i
 # strs = N.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 4 4
 # ##.#
 # ....
 # ##.#
 # .#.#
-# output
+# 出力例
 # ###
 # ###
 # .##

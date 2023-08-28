@@ -63,10 +63,10 @@
 # j
 # ​
 #  =X となるものが存在するとき Yes、存在しないとき No と出力せよ。
-# input
+# 入力例
 # 6 5
 # 3 1 4 1 5 9
-# output
+# 出力例
 # Yes
 
 _, w = gets.chomp.split.map(&:to_i)

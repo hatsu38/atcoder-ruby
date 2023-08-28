@@ -9,9 +9,9 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 1000000000000
-# output
+# 出力例
 # 1099511627775
 
 # 2の体力のモンスターを倒すのに3回の攻撃が必要

@@ -27,9 +27,9 @@
 # X を出力せよ。そのようなものが存在しない場合は
 # −1 を出力せよ。
 
-# input
+# 入力例
 # 5 7
-# output
+# 出力例
 # 8
 
 gets.chomp.split.map(&:to_i)

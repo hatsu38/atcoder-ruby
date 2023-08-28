@@ -8,18 +8,18 @@ S は a, e, i, o, u 以外の文字を一つ以上含みます。
 
 制約
 
-# input
+# 入力例
 atcoder
 
-# output
+# 出力例
 tcdr
 
-# input
+# 入力例
 2 1
 aa
 1 1
 
-# output
+# 出力例
 aa
 
 =end

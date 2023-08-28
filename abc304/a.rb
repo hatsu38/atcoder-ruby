@@ -23,7 +23,7 @@ i
 年齢が最も小さい人を起点として、座っている位置の時計回りの順番で、
 N 人全員の名前を出力してください。
 
-# input
+# 入力例
 5
 alice 31
 bob 41
@@ -31,7 +31,7 @@ carol 5
 dave 92
 ellen 65
 
-# output
+# 出力例
 carol
 dave
 ellen

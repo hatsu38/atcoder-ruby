@@ -9,7 +9,7 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 6 15
 # 6 5
 # 5 6
@@ -17,7 +17,7 @@
 # 6 6
 # 3 5
 # 7 2
-# output
+# 出力例
 # 17
 n, max_w = gets.chomp.split.map(&:to_i)
 strs = Array.new(n) { gets.chomp.split.map(&:to_i) }

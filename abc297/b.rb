@@ -9,9 +9,9 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # RNBQKBNR
-# output
+# 出力例
 # Yes
 
 # 長さ
@@ -35,9 +35,9 @@
 # x<z<y が成り立つ。
 
 # 例
-# input
+# 入力例
 # RNBQKBNR
-# output
+# 出力例
 # Yes
 # 上記の判定をするプログラムを作成してください。
 

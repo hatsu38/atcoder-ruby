@@ -9,13 +9,13 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 1 1 2
 # 10
 # 10
 # 1 1 5
 # 1 1 10
-# output
+# 出力例
 # 10
 
 _, _, m_quopon = gets.chomp.split.map(&:to_i)

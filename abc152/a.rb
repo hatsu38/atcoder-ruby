@@ -10,9 +10,9 @@
 # strs = h.times.map{ gets.chomp.split('') }
 
 # problem a
-# input
+# 入力例
 # 3 3
-# output
+# 出力例
 # Yes
 n, m = gets.chomp.split.map(&:to_i)
 

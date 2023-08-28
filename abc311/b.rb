@@ -5,41 +5,41 @@ N 人の人の今後 D 日間の予定が与えられます。
 D 日間のうち全員が暇であるような 連続する 何日かを選ぶことを考えます。
 選べる日数は最大で何日ですか？ただし、選べる日が存在しない場合は 0 日と答えてください。
 
-# input
+# 入力例
 3 5
 xooox
 oooxx
 oooxo
 
-# output
+# 出力例
 2
 
-# input
+# 入力例
 3 3
 oxo
 oxo
 oxo
 
-# output
+# 出力例
 1
 
-# input
+# 入力例
 3 3
 oox
 oxo
 xoo
 
-# output
+# 出力例
 0
 
-# input
+# 入力例
 1 7
 ooooooo
 
-# output
+# 出力例
 7
 
-# input
+# 入力例
 5 15
 oxooooooooooooo
 oxooxooooooooox
@@ -47,7 +47,7 @@ oxoooooooooooox
 oxxxooooooxooox
 oxooooooooxooox
 
-# output
+# 出力例
 5
 
 =end

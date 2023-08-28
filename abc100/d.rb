@@ -10,14 +10,14 @@
 # strs = h.times.map{ gets.chomp.split('') }
 
 # problem d
-# input
+# 入力例
 # 5 3
 # 1 -2 3
 # -4 5 -6
 # 7 -8 -9
 # -10 11 -12
 # 13 -14 15
-# output
+# 出力例
 # 54
 
 cake_kind_cnt, cake_select_cnt = gets.chomp.split.map(&:to_i)

@@ -57,14 +57,14 @@
 
 # S は R, L, U, D からなる長さ N の文字列
 
-# input
+# 入力例
 # 4 4
 # bbed
 # abcd
 # abed
 # fbed
 
-# output
+# 出力例
 # Yes
 
 n, m, h, k = gets.chomp.split.map(&:to_i)

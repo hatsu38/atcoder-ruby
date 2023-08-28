@@ -9,9 +9,9 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 750
-# output
+# 出力例
 # 777
 n = gets.to_i
 [*n..999].each do |num|

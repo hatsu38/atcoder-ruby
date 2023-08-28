@@ -10,9 +10,9 @@
 # strs = h.times.map{ gets.chomp.split('') }
 
 # problem a
-# input
+# 入力例
 # ASSA
-# output
+# 出力例
 # Yes
 strs = gets.chomp.chars
 if strs.count(strs.uniq[0]) == 2 && strs.count(strs.uniq[1]) == 2

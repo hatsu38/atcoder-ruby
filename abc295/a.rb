@@ -4,7 +4,7 @@
 # N 個の文字列 が与えられます。
 # これらのうち一つ以上が and, not, that, the, you のいずれかと一致するなら Yes 、そうでないなら No と出力してください。
 
-# input
+# 入力例
 # 10
 # in that case you should print yes and not no
 # ouput

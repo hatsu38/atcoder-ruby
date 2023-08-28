@@ -9,10 +9,10 @@
 # N = gets.to_i
 # strs = N.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 8 5
 # -9 -7 -4 -3 1 2 3 4
-# output
+# 出力例
 # 10
 
 n, k = gets.chomp.to_s.split.map(&:to_i)

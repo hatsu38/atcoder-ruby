@@ -9,9 +9,9 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 1199
-# outputABC
+# 出力例ABC
 R = gets.to_i
 
 if R < 1200

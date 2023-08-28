@@ -10,9 +10,9 @@
 # strs = h.times.map{ gets.chomp.split('') }
 
 # problem b
-# input
+# 入力例
 # 4 3
-# output
+# 出力例
 # 3333
 a, b = gets.chomp.split.map(&:to_i)
 puts [b.to_s * a, a.to_s * b].min

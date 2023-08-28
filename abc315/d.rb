@@ -16,31 +16,31 @@ H×W 枚のクッキーがH 行W 列に並んでいます。
 2≤H,W≤2000
 c i,jは英小文字である
 
-# input
+# 入力例
 4 3
 aaa
 aaa
 abc
 abd
 
-# output
+# 出力例
 2
 
-# input
+# 入力例
 2 5
 aaaaa
 abcde
 
-# output
+# 出力例
 4
 
-# input
+# 入力例
 3 3
 ooo
 ooo
 ooo
 
-# output
+# 出力例
 0
 
 =end

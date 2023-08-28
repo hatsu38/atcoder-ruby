@@ -34,10 +34,10 @@
 # 出力
 # 男女が交互に並んでいるとき Yes、そうでないとき No と出力せよ。
 
-# INPUT
+# 入力例
 # 6
 # MFMFMF
-# OUTPUT
+# 出力例
 # Yes
 
 gets.chomp

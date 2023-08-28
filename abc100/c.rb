@@ -9,12 +9,12 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 3
 # 5 2 4
 # N = 3
 # strs = [5,2,4]
-# output
+# 出力例
 # 3
 
 N = gets.chomp.split.map(&:to_i)

@@ -9,7 +9,7 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 60 88 34
 # 92 41 43
 # 65 73 48
@@ -25,7 +25,7 @@
 # 92
 # 34
 # 31 41 59 26 53
-# output
+# 出力例
 # Yes
 
 bingos = Array.new(3) { gets.chomp.split.map(&:to_i) }.flatten

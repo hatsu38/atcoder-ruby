@@ -1,9 +1,9 @@
 =begin
 N が素数であるかどうかを判定してください。
 
-input
+入力例
 53
-output
+出力例
 Yes
 =end
 require 'prime'

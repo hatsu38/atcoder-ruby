@@ -32,14 +32,14 @@
 # S i
 # ​は互いに異なる。
 
-# input
+# 入力例
 # 4 4
 # bbed
 # abcd
 # abed
 # fbed
 
-# output
+# 出力例
 # Yes
 
 n, m = gets.chomp.split.map(&:to_i)

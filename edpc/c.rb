@@ -9,7 +9,7 @@
 # h,w = gets.chomp.split(' ').map(&:to_i)
 # strs = h.times.map{ gets.chomp.split('') }
 
-# input
+# 入力例
 # 7
 # 6 7 8
 # 8 8 3
@@ -18,7 +18,7 @@
 # 4 6 8
 # 2 3 4
 # 7 5 1
-# output
+# 出力例
 # 46
 n = gets.to_i
 strs = Array.new(n) { gets.chomp.split.map(&:to_i) }

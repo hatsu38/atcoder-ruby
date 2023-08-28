@@ -25,20 +25,20 @@ S は英小文字からなる長さN の文字列
 任意の整数1≤i≤M に対して、ある整数1≤j≤N が存在して
 Cj=i が成り立つ
 
-# input
+# 入力例
 8 3
 apzbqrcs
 1 2 3 1 2 2 1 2
 
-# output
+# 出力例
 cszapqbr
 
-# input
+# 入力例
 2 1
 aa
 1 1
 
-# output
+# 出力例
 aa
 
 =end

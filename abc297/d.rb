@@ -26,9 +26,9 @@
 # A=B になるまで、操作を何回行うか求めてください。ただし、有限回の操作で
 # A=B になることが保証されます。
 
-# input
+# 入力例
 # 3 8
-# output
+# 出力例
 # 4
 
 h, w = gets.chomp.split.map(&:to_i).minmax

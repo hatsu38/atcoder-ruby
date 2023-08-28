@@ -30,11 +30,11 @@
 # S と
 # T が似た文字列か判定してください
 
-# input
+# 入力例
 # 3
 # l0w
 # 1ow
-# output
+# 出力例
 # Yes
 
 gets.chomp.to_i
