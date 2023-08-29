@@ -15,6 +15,6 @@
 # 出力例
 # 5
 N = gets.to_i
-strs = gets.split.map(&:to_i).map(&:abs).sort
+strs = gets.split.map { |x| x.to_i.abs }.sort
 
 puts strs[-1] - strs[0]

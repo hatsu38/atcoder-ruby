@@ -60,7 +60,7 @@ N, T, M = gets.split.map(&:to_i)
 HATE = Array.new(N + 1) { [] }
 
 M.times do
-  a, b = gets.split.map(&:to_i).map(&:pred)
+  a, b = gets.split.map { |x| x.to_i.pred }
   HATE[a] << b
   HATE[b] << a
 end
