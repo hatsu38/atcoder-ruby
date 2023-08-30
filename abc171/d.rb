@@ -77,7 +77,7 @@ Si​ は 32 ビット整数に収まらない可能性があることに注意�
 
 require 'prime'
 
-n = gets.chomp.to_i
+gets.chomp.to_i
 a_ary = gets.split.map(&:to_i)
 q = gets.chomp.to_i
 bc_hash = {}
@@ -115,4 +115,3 @@ bc_hash.each do |_k, v|
   end
   puts default_sum
 end
-

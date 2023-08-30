@@ -112,7 +112,7 @@ max_conditions = 0
   satisfied_conditions = 0
 
   ab_ary.each do |ab|
-    satisfied_conditions += 1 if balls[ab[0] - 1] > 0 && balls[ab[1] - 1] > 0
+    satisfied_conditions += 1 if (balls[ab[0] - 1]).positive? && (balls[ab[1] - 1]).positive?
   end
 
   max_conditions = [max_conditions, satisfied_conditions].max
