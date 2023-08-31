@@ -56,7 +56,6 @@ redcoat
 
 atcoder
 
-
 =end
 
 require 'prime'
