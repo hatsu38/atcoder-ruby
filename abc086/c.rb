@@ -67,10 +67,7 @@ n.times do |i|
   t, x, y = txy_array[i]
   time = t - default_time
   distance = (x - default_x).abs + (y - default_y).abs
-  if time < distance
-    puts 'No'
-    exit
-  elsif (time - distance).odd?
+  if time < distance || (time - distance).odd?
     puts 'No'
     exit
   end

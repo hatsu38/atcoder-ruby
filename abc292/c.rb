@@ -50,8 +50,8 @@ n = gets.to_i
 f = Array.new(n + 1, 0)
 
 (1..n).each do |a|
-  (1..n/a).each do |b|
-    f[a*b] += 1
+  (1..n / a).each do |b|
+    f[a * b] += 1
   end
 end
 

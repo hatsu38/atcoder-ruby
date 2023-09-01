@@ -41,13 +41,13 @@ require 'prime'
 
 s = gets.chomp
 
-s = s.gsub(/eraser/,"")
-s = s.gsub(/erase/,"")
-s = s.gsub(/dreamer/,"")
-s = s.gsub(/dream/,"")
+s = s.gsub('eraser', '')
+s = s.gsub('erase', '')
+s = s.gsub('dreamer', '')
+s = s.gsub('dream', '')
 
-if s.length == 0
-  puts "YES"
+if s.empty?
+  puts 'YES'
 else
-  puts "NO"
+  puts 'NO'
 end

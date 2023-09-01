@@ -63,7 +63,7 @@ t1​ t2​ ... tN​
 
 require 'prime'
 
-n, t = gets.split.map(&:to_i)
+_, t = gets.split.map(&:to_i)
 
 t_ary = gets.split.map(&:to_i)
 

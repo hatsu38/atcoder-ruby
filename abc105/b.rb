@@ -1,30 +1,52 @@
-# frozen_string_literal: true
+=begin
+## 問題文
+105という数は,非常に特殊な性質を持つ-奇数なのに,約数が8個もある.さて,1以上N以下の奇数のうち,正の約数をちょうど8個持つようなものの個数を求めよ.
 
-### 例
-# N
-# a_1 b_1
-# ...
-# a_N b_N
+## 制約
 
-# h,w = gets.chomp.split(' ').map(&:to_i)
-# strs = h.times.map{ gets.chomp.split('') }
+N は 1 以上 200 以下の整数
 
-# 入力例
-# 11
-# 出力例
-# Yes
+## 入力
+入力は以下の形式で標準入力から与えられる.
+
+N
+
+## 出力
+条件を満たす数の個数を出力しなさい.
+
+## 入力例 1
+105
+
+## 出力例 1
+1
+
+1 以上 105 以下の整数の中で, ただ一つの「奇数かつ約数が 8 個」を満たす数は 105 である.
+
+## 入力例 2
+7
+
+## 出力例 2
+0
+
+1 は約数が 1 個, 3, 5, 7 は全て素数なので約数が 2 個である. よって前述の条件を満たすような数は存在しない.
+
+=end
+
+require 'prime'
+
 n = gets.to_i
 
-def yes?(x)
-  return false unless (x % 4).zero? || (x % 7).zero? || (x % 11).zero?
+ans = 0
 
-  puts 'Yes'
-  exit
+(1..n).each do |i|
+  next if i.even?
+
+  tmp_cnt = 0
+  (1..i).each do |j|
+    tmp_cnt += 1 if (i % j).zero?
+  end
+
+  ans += 1 if tmp_cnt == 8
 end
 
-while n >= 4
-  yes?(n)
-  n -= 4
-end
-
-puts 'No'
+puts ans
