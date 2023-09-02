@@ -66,27 +66,74 @@ N が奇数の場合もあります。
 
 require 'prime'
 
-n = gets.chomp.to_i
-d = Array.new(n) { Array.new(n) }
+## DPでの回答
+# n = gets.chomp.to_i
+# d = Array.new(n) { Array.new(n) }
 
-(n - 1).times do |i|
-  d_ary = gets.chomp.split.map(&:to_i)
-  d[i][i] = 0
-  d_ary.each_with_index do |val, j|
-    d[i][i + j + 1] = val
-    d[i + j + 1][i] = val
+# (n - 1).times do |i|
+#   d_ary = gets.chomp.split.map(&:to_i)
+#   d[i][i] = 0
+#   d_ary.each_with_index do |val, j|
+#     d[i][i + j + 1] = val
+#     d[i + j + 1][i] = val
+#   end
+# end
+# d[n - 1][n - 1] = 0
+
+# dp = Array.new(1 << n, 0)
+
+# (1 << n).times do |mask|
+#   n.times do |i|
+#     (i + 1...n).each do |j|
+#       dp[mask] = [dp[mask], dp[mask ^ (1 << i) ^ (1 << j)] + d[i][j]].max if (mask & (1 << i)).positive? && (mask & (1 << j)).positive?
+#     end
+#   end
+# end
+
+# puts dp[(1 << n) - 1]
+
+## DFSでの回答
+
+# =begin
+@n = gets.to_i
+@d_ary = Array.new(@n) { Array.new(@n, 0) }
+
+(@n - 1).times do |i|
+  d = gets.split.map(&:to_i)
+  (i + 1...@n).each do |j|
+    @d_ary[i][j] = @d_ary[j][i] = d[j - i - 1]
   end
 end
-d[n - 1][n - 1] = 0
 
-dp = Array.new(1 << n, 0)
+def dfs(used)
+  return 0 if used.all?
 
-(1 << n).times do |mask|
-  n.times do |i|
-    (i + 1...n).each do |j|
-      dp[mask] = [dp[mask], dp[mask ^ (1 << i) ^ (1 << j)] + d[i][j]].max if (mask & (1 << i)).positive? && (mask & (1 << j)).positive?
-    end
+  v = used.index(false)
+  used[v] = true
+  ret = 0
+  (v + 1...@n).each do |w|
+    next if used[w]
+
+    used[w] = true
+    ret = [ret, @d_ary[v][w] + dfs(used)].max
+    used[w] = false
+  end
+  used[v] = false
+  ret
+end
+
+used = Array.new(@n, false)
+
+ans = 0
+if @n.even?
+  ans = dfs(used)
+else
+  @n.times do |v|
+    used[v] = true
+    ans = [ans, dfs(used)].max
+    used[v] = false
   end
 end
 
-puts dp[(1 << n) - 1]
+puts ans
+# =end

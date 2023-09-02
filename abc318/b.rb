@@ -29,7 +29,7 @@ AN​ BN​ CN​ DN​
 ## 出力例 1
 20
 
-3 枚のシートによって覆われている領域は次のようになります。 
+3 枚のシートによって覆われている領域は次のようになります。
 ここで、赤色・黄色・青色はそれぞれ 1 枚目・ 2 枚目・ 3 枚目のシートによって覆われている領域を表しています。
 よって、1 枚以上のシートによって覆われている領域の面積は S=20 となります。
 
@@ -60,8 +60,8 @@ n = gets.chomp.to_i
 abcd_ary = Array.new(n) { gets.chomp.split.map(&:to_i) }
 
 ans = 0
-(0..100).each do |x|
-  (0..100).each do |y|
+101.times do |x|
+  101.times do |y|
     cnt = 0
     abcd_ary.each do |a, b, c, d|
       cnt += 1 if a <= x && x < b && c <= y && y < d

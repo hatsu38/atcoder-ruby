@@ -46,7 +46,7 @@ n, m, p = gets.chomp.split.map(&:to_i)
 
 cnt = m
 ans = 0
-while cnt <= n do
+while cnt <= n
   ans += 1 if cnt <= n
   cnt += p
 end
