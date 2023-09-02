@@ -1,34 +1,86 @@
-# frozen_string_literal: true
+=begin
+## 問題文
+N個の品物があります。
+品物には1,2,…,Nと番号が振られています。
+各i(1≤i≤N)について、品物iの重さはwi​で、価値はvi​です。
+太郎君は、N個の品物のうちいくつかを選び、ナップサックに入れて持ち帰ることにしました。
+ナップサックの容量はWであり、持ち帰る品物の重さの総和はW以下でなければなりません。
+太郎君が持ち帰る品物の価値の総和の最大値を求めてください。
 
-### 例
-# N
-# a_1 b_1
-# ...
-# a_N b_N
+## 制約
+入力はすべて整数である。
+1≤N≤100
+1≤W≤10**5
+1≤wi​≤W
+1≤vi​≤10**9
 
-# h,w = gets.chomp.split(' ').map(&:to_i)
-# strs = h.times.map{ gets.chomp.split('') }
+## 入力入力は以下の形式で標準入力から与えられる。
+N W
+w1​ v1​
+w2​ v2​
+:
+wN​ vN​
 
-# 入力例
-# 6 15
-# 6 5
-# 5 6
-# 6 4
-# 6 6
-# 3 5
-# 7 2
-# 出力例
-# 17
-n, max_w = gets.chomp.split.map(&:to_i)
-strs = Array.new(n) { gets.chomp.split.map(&:to_i) }
+## 出力太郎君が持ち帰る品物の価値の総和の最大値を出力せよ。
 
-dp = Array.new(max_w + 10, 0)
-dp[0] = 0
-strs.each do |w, v|
-  (max_w - w).downto(0) do |idx|
-    nv = dp[idx] + v
-    nw = idx + w
-    dp[nw] = nv if dp[nw] < nv
+## 入力例 1
+3 8
+3 30
+4 50
+5 60
+
+## 出力例 1
+90
+
+品物 1,3 を選べばよいです。
+すると、重さの総和は 3+5=8 となり、価値の総和は 30+60=90 となります。
+
+## 入力例 2
+5 5
+1 1000000000
+1 1000000000
+1 1000000000
+1 1000000000
+1 1000000000
+
+## 出力例 2
+5000000000
+
+答えは 32-bit 整数型に収まらない場合があります。
+
+## 入力例 3
+6 15
+6 5
+5 6
+6 4
+6 6
+3 5
+7 2
+
+## 出力例 3
+17
+
+品物 2,4,5 を選べばよいです。
+すると、重さの総和は 5+6+3=14 となり、価値の総和は 6+6+5=17 となります。
+
+=end
+
+n, w = gets.split.map(&:to_i)
+
+w_v_array = Array.new(n) { gets.split.map(&:to_i) }
+
+dp = Array.new(n + 1) { Array.new(w + 1, 0) }
+
+(1..n).each do |i|
+  curremt_w = w_v_array[i - 1][0]
+  current_v = w_v_array[i - 1][1]
+  (1..w).each do |j|
+    dp[i][j] = if j < curremt_w
+                 dp[i - 1][j]
+               else
+                 [dp[i - 1][j], dp[i - 1][j - curremt_w] + current_v].max
+               end
   end
 end
-print dp[max_w]
+
+puts dp[n][w]

@@ -79,13 +79,13 @@ que = []
     que << [x, c]
   else
     cnt = 0
-    while x > 0
+    while x.positive?
       s, t = que.shift
       remove_count = [t, x].min
       cnt += s * remove_count
       x -= remove_count
       t -= remove_count
-      que.unshift([s, t]) if t > 0
+      que.unshift([s, t]) if t.positive?
     end
     puts cnt
   end
