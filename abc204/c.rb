@@ -54,8 +54,37 @@ AM​ BM​
 スタート地点とゴール地点の組として全ての都市の組み合わせが可能です。
 =end
 
+# BFS
+
 require 'prime'
 
-_, m = gets.split.map(&:to_i)
+n, m = gets.split.map(&:to_i)
+graph = {}
 
-Array.new(m) { gets.split.map(&:to_i) }
+m.times do
+  u, v = gets.split.map(&:to_i)
+  graph[u] ||= []
+  graph[u] << v
+end
+
+ans = 0
+
+(1..n).each do |i|
+  arrived = {}
+  arrived[i] = true
+  que = [i]
+  ans += 1
+  v = que.shift
+  while v
+    graph[v]&.each do |val|
+      next if arrived[val]
+
+      que << val
+      arrived[val] = true
+      ans += 1
+    end
+    v = que.shift
+  end
+end
+
+p ans
