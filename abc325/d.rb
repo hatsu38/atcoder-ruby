@@ -77,9 +77,10 @@ class Heap
 
   def add(x)
     i = @size
-    while i > 0 do
+    while i.positive?
       parent_index = (i - 1) / 2
       break if x >= @heap[parent_index]
+
       @heap[i] = @heap[parent_index]
       i = parent_index
     end
@@ -89,53 +90,54 @@ class Heap
 
   def pop
     return if @size <= 0
+
     min = @heap[0]
     @size -= 1
     n = @heap[@size]
     i = 0
     b = 1
-    while b < @size do
+    while b < @size
       child_index1 = b
       child_index2 = b + 1
-      if child_index2 < @size && @heap[child_index2] < @heap[child_index1]
-        child_index1 = child_index2
-      end
+      child_index1 = child_index2 if child_index2 < @size && @heap[child_index2] < @heap[child_index1]
       break if @heap[child_index1] >= n
+
       @heap[i] = @heap[child_index1]
       i = child_index1
-      b = i * 2 + 1
+      b = (i * 2) + 1
     end
     @heap[i] = n
     min
   end
 
-  def min; @heap[0] end
-  def size; @size end
+  def min
+    @heap[0]
+  end
+
+  def empty?
+    @size.zero?
+  end
 end
 
 n = gets.to_i
 arr = []
 n.times do
-  t,d = gets.split.map(&:to_i)
-  arr << [t,d]
+  t, d = gets.split.map(&:to_i)
+  arr << [t, d]
 end
-arr.sort_by!{|t,d|t}
+arr.sort_by! { |t, _d| t }
 heap = Heap.new
 i = 0
 time = 0
 cnt = 0
-while i < n || heap.size != 0
-  if heap.size == 0
-    time = arr[i][0]
-  end
+while i < n || !heap.empty?
+  time = arr[i][0] if heap.empty?
   while i < n && arr[i][0] == time
-    heap.add(arr[i][0]+arr[i][1])
+    heap.add(arr[i][0] + arr[i][1])
     i += 1
   end
-  while heap.size != 0 && heap.min < time
-    heap.pop
-  end
-  if heap.size != 0
+  heap.pop while !heap.empty? && heap.min < time
+  unless heap.empty?
     cnt += 1
     heap.pop
   end
