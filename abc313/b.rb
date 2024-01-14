@@ -71,7 +71,7 @@ end
 
 storngest = []
 
-wineers_hash.each do |k, _|
+wineers_hash.each_key do |k|
   next if losers_hash[k]
 
   storngest << k

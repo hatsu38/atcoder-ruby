@@ -73,7 +73,7 @@ def find_cycle(
   end
 end
 
-@a_hash.each do |k, _v|
+@a_hash.each_key do |k|
   ans = [k]
   visited_hash = {}
   find_cycle(

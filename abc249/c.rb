@@ -75,7 +75,7 @@ ans = 0
   end
   count_hash = s.flatten.tally
   cnt = 0
-  count_hash.each do |_, v|
+  count_hash.each_value do |v|
     cnt += 1 if v == k
   end
   ans = [ans, cnt].max

@@ -100,6 +100,6 @@ h.times do |i|
   end
 end
 
-ans_hash.each do |_k, v|
+ans_hash.each_value do |v|
   puts v.values.join
 end

@@ -101,7 +101,7 @@ a_ary.each do |a|
   end
 end
 
-bc_hash.each do |_k, v|
+bc_hash.each_value do |v|
   b = v[:b]
   c = v[:c]
   if a_hash[b]

@@ -79,7 +79,7 @@ def count_lines(width, lengths)
 end
 
 low = lengths.max
-high = lengths.sum + n - 1  # 最大の幅は、すべての単語の長さの合計 + 空白の合計
+high = lengths.sum + n - 1 # 最大の幅は、すべての単語の長さの合計 + 空白の合計
 
 answer = high
 
